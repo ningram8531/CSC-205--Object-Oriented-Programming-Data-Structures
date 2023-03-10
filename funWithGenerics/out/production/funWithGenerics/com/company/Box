@@ -1,0 +1,44 @@
+package com.company;
+
+/**
+ * This is kinda a generic box. It can hold any object.
+ */
+public class Box <T> implements Comparable <Box <T>>{
+    private final int SERIAL_NUMBER;
+    private T theObject;
+    private static int widgetCount = 10000;
+
+    public Box(T theObject) {
+        widgetCount++;
+        this.SERIAL_NUMBER = widgetCount;
+        this.theObject = theObject;
+    }
+
+    public Object getTheObject() {
+        return theObject;
+    }
+
+    public static int getWidgetCount() {
+        return widgetCount;
+    }
+
+    public void setTheObject(T theObject) {
+        this.theObject = theObject;
+    }
+
+    public static void setWidgetCount(int widgetCount) {
+        Box.widgetCount = widgetCount;
+    }
+
+    public boolean equals(T other) {
+        return this.SERIAL_NUMBER = other.SERIAL_NUMBER;
+    }
+
+    @Override
+    public String toString() {
+        return "Box{" +
+                "SERIAL_NUMBER=" + SERIAL_NUMBER +
+                ", theObject=" + theObject +
+                '}';
+    }
+}
